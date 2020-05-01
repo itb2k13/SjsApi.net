@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SjsApi", "SjsApi\SjsApi.csproj", "{053237CD-97D9-4234-8B6C-BD70151056D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SjsApi.Lib", "SjsApi.Lib\SjsApi.Lib.csproj", "{76A3FCF8-B6D1-4FAC-AFFD-AAB0C6F069A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SjsApi.Models", "SjsApi.Models\SjsApi.Models.csproj", "{E0D6AC05-CBC6-45EA-89F2-E7EEADAFC4D0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{053237CD-97D9-4234-8B6C-BD70151056D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{053237CD-97D9-4234-8B6C-BD70151056D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{053237CD-97D9-4234-8B6C-BD70151056D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{053237CD-97D9-4234-8B6C-BD70151056D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76A3FCF8-B6D1-4FAC-AFFD-AAB0C6F069A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76A3FCF8-B6D1-4FAC-AFFD-AAB0C6F069A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76A3FCF8-B6D1-4FAC-AFFD-AAB0C6F069A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76A3FCF8-B6D1-4FAC-AFFD-AAB0C6F069A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0D6AC05-CBC6-45EA-89F2-E7EEADAFC4D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0D6AC05-CBC6-45EA-89F2-E7EEADAFC4D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0D6AC05-CBC6-45EA-89F2-E7EEADAFC4D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0D6AC05-CBC6-45EA-89F2-E7EEADAFC4D0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7098A99B-401D-4DAC-9A72-BCF8ED206729}
+	EndGlobalSection
+EndGlobal
