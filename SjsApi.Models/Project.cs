@@ -29,12 +29,12 @@
     public class Media
     {
         /// <summary>
-        /// Gets or sets the Image.
+        /// Gets or sets the Url.
         /// </summary>
         public string Url { get; set; }
 
         /// <summary>
-        /// Gets or sets the ImageTitle.
+        /// Gets or sets the Title.
         /// </summary>
         public string Title { get; set; }
     }
@@ -44,6 +44,11 @@
     /// </summary>
     public class Project
     {
+        /// <summary>
+        /// Gets or sets the Type.
+        /// </summary>
+        public string Type { get; set; }
+
         /// <summary>
         /// Gets or sets the Title.
         /// </summary>
@@ -73,5 +78,46 @@
         /// Gets or sets the Media.
         /// </summary>
         public IEnumerable<Media> Media { get; set; }
+    }
+
+    /// <summary>
+    /// Defines the <see cref="ContentSection" />.
+    /// </summary>
+    public class ContentSection
+    {
+        /// <summary>
+        /// Gets or sets the BackgroundImage.
+        /// </summary>
+        public Media BackgroundImage { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Path.
+        /// </summary>
+        public string Path { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Title.
+        /// </summary>
+        public string Title { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Subtitle.
+        /// </summary>
+        public string Subtitle { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Heading.
+        /// </summary>
+        public string Heading { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Description.
+        /// </summary>
+        public string Description { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Projects.
+        /// </summary>
+        public IEnumerable<Project> Projects { get; set; }
     }
 }

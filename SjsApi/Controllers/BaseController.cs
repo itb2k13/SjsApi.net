@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using SjsApi.Lib.Providers;
 
 namespace SjsApi.Controllers
@@ -8,8 +7,8 @@ namespace SjsApi.Controllers
     [ApiController]
     public class BaseController : ControllerBase
     {
-        IUtilityProvider _utilityProvider;
-        
+        private IUtilityProvider _utilityProvider;
+
         public BaseController(IUtilityProvider utilityProvider)
         {
             _utilityProvider = utilityProvider;

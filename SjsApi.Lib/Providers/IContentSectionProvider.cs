@@ -4,8 +4,8 @@ using SjsApi.Models;
 
 namespace SjsApi.Lib.Providers
 {
-    public interface IProjectsProvider
+    public interface IContentSectionProvider
     {
-        Task<IEnumerable<Project>> GetProjects();
+        Task<ContentSection> GetContentSection(string path);
     }
 }
