@@ -44,10 +44,7 @@
     /// </summary>
     public class Project
     {
-        /// <summary>
-        /// Gets or sets the Type.
-        /// </summary>
-        public string Type { get; set; }
+
 
         /// <summary>
         /// Gets or sets the Title.
