@@ -21,6 +21,11 @@
         /// Gets or sets the Icon.
         /// </summary>
         public string Icon { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Link.
+        /// </summary>
+        public string Link { get; set; }
     }
 
     /// <summary>
@@ -44,8 +49,6 @@
     /// </summary>
     public class Project
     {
-
-
         /// <summary>
         /// Gets or sets the Title.
         /// </summary>
