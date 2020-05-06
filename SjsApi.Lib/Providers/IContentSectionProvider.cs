@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using SjsApi.Models;
 using System.Threading.Tasks;
-using SjsApi.Models;
 
 namespace SjsApi.Lib.Providers
 {
     public interface IContentSectionProvider
     {
         Task<ContentSection> GetContentSection(string path);
+        Task<Project> GetProjectDetail(string path, string projectTitle);
     }
 }

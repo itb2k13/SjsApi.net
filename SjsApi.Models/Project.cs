@@ -45,6 +45,27 @@
     }
 
     /// <summary>
+    /// Defines the <see cref="Media" />.
+    /// </summary>
+    public class Feature
+    {
+        /// <summary>
+        /// Gets or sets the Image.
+        /// </summary>
+        public Media Image { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Title.
+        /// </summary>
+        public string Title { get; set; }
+
+        /// <summary>
+        /// Gets or sets the FeatureSet.
+        /// </summary>
+        public string[] FeatureSet { get; set; }
+    }
+
+    /// <summary>
     /// Defines the <see cref="Project" />.
     /// </summary>
     public class Project
@@ -78,6 +99,11 @@
         /// Gets or sets the Media.
         /// </summary>
         public IEnumerable<Media> Media { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Features.
+        /// </summary>
+        public IEnumerable<Feature> Features { get; set; }
     }
 
     /// <summary>

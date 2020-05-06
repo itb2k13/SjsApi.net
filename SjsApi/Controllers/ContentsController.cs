@@ -25,5 +25,12 @@ namespace SjsApi.Controllers
         {
             return await _contentSectionProvider.GetContentSection($"{section}/{path}");
         }
+
+        [HttpGet]
+        [Route("{section}/{path}/{title}")]
+        public async Task<Project> Get(string section, string path, string title)
+        {
+            return await _contentSectionProvider.GetProjectDetail($"{section}/{path}", title);
+        }
     }
 }

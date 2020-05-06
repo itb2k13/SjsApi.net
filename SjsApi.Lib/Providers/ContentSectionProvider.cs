@@ -36,5 +36,14 @@
                 .FromResult(_config.GetSection("Contents").Get<IEnumerable<ContentSection>>()?
                     .FirstOrDefault(x => x.Path == path));
         }
+
+        public async Task<Project> GetProjectDetail(string path, string projectTitle)
+        {
+            var content = await GetContentSection(path);
+
+            return content.Projects?
+                    .Where(n => n.Title == projectTitle)?
+                    .FirstOrDefault();
+        }
     }
 }
