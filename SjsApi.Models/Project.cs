@@ -3,6 +3,27 @@
     using System.Collections.Generic;
 
     /// <summary>
+    /// Defines the <see cref="Icon" />.
+    /// </summary>
+    public class Icon
+    {
+        /// <summary>
+        /// Gets or sets the Name.
+        /// </summary>
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Group.
+        /// </summary>
+        public string Group { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Color.
+        /// </summary>
+        public string Color { get; set; }
+    }
+
+    /// <summary>
     /// Defines the <see cref="Reference" />.
     /// </summary>
     public class Reference
@@ -20,7 +41,7 @@
         /// <summary>
         /// Gets or sets the Icon.
         /// </summary>
-        public string Icon { get; set; }
+        public Icon Icon { get; set; }
 
         /// <summary>
         /// Gets or sets the Link.
@@ -88,7 +109,7 @@
         /// <summary>
         /// Gets or sets the Icon.
         /// </summary>
-        public string Icon { get; set; }
+        public Icon Icon { get; set; }
 
         /// <summary>
         /// Gets or sets the References.
