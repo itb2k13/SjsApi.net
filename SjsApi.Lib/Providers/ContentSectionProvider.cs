@@ -12,7 +12,7 @@
     public class ContentSectionProvider : IContentSectionProvider
     {
         /// <summary>
-        /// Defines the _config..
+        /// Defines the _config.
         /// </summary>
         private readonly IConfiguration _config;
 
@@ -37,9 +37,28 @@
                     .FirstOrDefault(x => x.Path == path));
         }
 
+        /// <summary>
+        /// The SetContentSection.
+        /// </summary>
+        /// <param name="path">The path<see cref="string"/>.</param>
+        /// <param name="content">The content<see cref="ContentSection"/>.</param>
+        /// <returns>The <see cref="Task{ContentSection}"/>.</returns>
+        public async Task<ContentSection> SetContentSection(string path, ContentSection content)
+        {
+            return await Task
+                .FromResult(_config.GetSection("Contents").Get<IEnumerable<ContentSection>>()?
+                    .FirstOrDefault(x => x.Path == path));
+        }
+
+        /// <summary>
+        /// The GetProjectDetail.
+        /// </summary>
+        /// <param name="path">The path<see cref="string"/>.</param>
+        /// <param name="projectTitle">The projectTitle<see cref="string"/>.</param>
+        /// <returns>The <see cref="Task{Project}"/>.</returns>
         public async Task<Project> GetProjectDetail(string path, string projectTitle)
         {
-            var content = await GetContentSection(path);
+            ContentSection content = await GetContentSection(path);
 
             return content.Projects?
                     .Where(n => n.Title == projectTitle)?
