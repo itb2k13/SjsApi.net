@@ -1,7 +1,9 @@
+using System.Text.Json;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Newtonsoft.Json.Serialization;
 using SjsApi.Lib.Providers;
 
 namespace SjsApi
@@ -18,6 +20,13 @@ namespace SjsApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services
+                .AddMvc()
+                .AddJsonOptions(jsonOptions =>
+                {
+                    jsonOptions.JsonSerializerOptions.PropertyNamingPolicy = null;
+                });
+
             services.AddCors(options =>
             {
                 options.AddDefaultPolicy(
@@ -28,6 +37,7 @@ namespace SjsApi
             });
 
             services.AddSingleton<IUtilityProvider, UtilityProvider>();
+            services.AddSingleton<IMlabProvider, MlabProvider>();
             services.AddSingleton<IContentSectionProvider, ContentSectionProvider>();
             services.AddControllers();
         }

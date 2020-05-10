@@ -1,6 +1,7 @@
 ﻿namespace SjsApi.Lib.Providers
 {
     using Microsoft.Extensions.Configuration;
+    using MongoDB.Driver;
     using SjsApi.Models;
     using System.Collections.Generic;
     using System.Linq;
@@ -17,11 +18,18 @@
         private readonly IConfiguration _config;
 
         /// <summary>
+        /// Defines the _provider.
+        /// </summary>
+        private readonly IMlabProvider _provider;
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="ContentSectionProvider"/> class.
         /// </summary>
         /// <param name="config">The config<see cref="IConfiguration" />.</param>
-        public ContentSectionProvider(IConfiguration config)
+        /// <param name="provider">The provider<see cref="IMlabProvider"/>.</param>
+        public ContentSectionProvider(IConfiguration config, IMlabProvider provider)
         {
+            _provider = provider;
             _config = config;
         }
 
@@ -45,9 +53,7 @@
         /// <returns>The <see cref="Task{ContentSection}"/>.</returns>
         public async Task<ContentSection> SetContentSection(string path, ContentSection content)
         {
-            return await Task
-                .FromResult(_config.GetSection("Contents").Get<IEnumerable<ContentSection>>()?
-                    .FirstOrDefault(x => x.Path == path));
+            return await _provider.Set(path, content);
         }
 
         /// <summary>

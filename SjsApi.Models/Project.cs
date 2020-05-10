@@ -97,9 +97,9 @@
         public string Title { get; set; }
 
         /// <summary>
-        /// Gets or sets the Subtitle.
+        /// Gets or sets the SubTitle.
         /// </summary>
-        public string Subtitle { get; set; }
+        public string SubTitle { get; set; }
 
         /// <summary>
         /// Gets or sets the Description.
@@ -132,6 +132,8 @@
     /// </summary>
     public class ContentSection
     {
+        public object _id { get; set; }
+
         /// <summary>
         /// Gets or sets the BackgroundImage.
         /// </summary>
@@ -150,7 +152,7 @@
         /// <summary>
         /// Gets or sets the Subtitle.
         /// </summary>
-        public string Subtitle { get; set; }
+        public string SubTitle { get; set; }
 
         /// <summary>
         /// Gets or sets the Heading.
