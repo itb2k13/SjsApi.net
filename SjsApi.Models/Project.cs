@@ -1,4 +1,6 @@
-﻿namespace SjsApi.Models
+﻿using MongoDB.Bson.Serialization.Attributes;
+
+namespace SjsApi.Models
 {
     using System.Collections.Generic;
 
@@ -130,9 +132,10 @@
     /// <summary>
     /// Defines the <see cref="ContentSection" />.
     /// </summary>
+    [BsonIgnoreExtraElements]
     public class ContentSection
     {
-        public object _id { get; set; }
+        
 
         /// <summary>
         /// Gets or sets the BackgroundImage.

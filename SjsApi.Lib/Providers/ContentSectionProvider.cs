@@ -40,9 +40,7 @@
         /// <returns>The <see cref="Task{ContentSection}" />.</returns>
         public async Task<ContentSection> GetContentSection(string path)
         {
-            return await Task
-                .FromResult(_config.GetSection("Contents").Get<IEnumerable<ContentSection>>()?
-                    .FirstOrDefault(x => x.Path == path));
+            return await _provider.Get(path);
         }
 
         /// <summary>
@@ -64,7 +62,7 @@
         /// <returns>The <see cref="Task{Project}"/>.</returns>
         public async Task<Project> GetProjectDetail(string path, string projectTitle)
         {
-            ContentSection content = await GetContentSection(path);
+            var content = await GetContentSection(path);
 
             return content.Projects?
                     .Where(n => n.Title == projectTitle)?

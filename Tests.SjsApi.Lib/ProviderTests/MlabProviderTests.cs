@@ -13,7 +13,6 @@ namespace Tests.SjsApi.Lib.ProviderTests
     {
         readonly ContentSection _content = new ContentSection()
         {
-            _id = Guid.NewGuid(),
             Path = "base/test",
             Title = "Test Content",
             Projects = new List<Project>
