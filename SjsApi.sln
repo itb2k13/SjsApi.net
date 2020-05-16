@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SjsApi.Lib", "SjsApi.Lib\Sj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SjsApi.Models", "SjsApi.Models\SjsApi.Models.csproj", "{E0D6AC05-CBC6-45EA-89F2-E7EEADAFC4D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests.SjsApi.Lib", "Tests.SjsApi.Lib\Tests.SjsApi.Lib.csproj", "{5BEA9C4B-F7DB-468E-9DA4-66E904E67513}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests.SjsApi.Lib", "Tests.SjsApi.Lib\Tests.SjsApi.Lib.csproj", "{5BEA9C4B-F7DB-468E-9DA4-66E904E67513}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SjsApi.Security", "SjsApi.Security\SjsApi.Security.csproj", "{15815204-8F99-4219-ACE1-B6C7094C7677}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{5BEA9C4B-F7DB-468E-9DA4-66E904E67513}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5BEA9C4B-F7DB-468E-9DA4-66E904E67513}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5BEA9C4B-F7DB-468E-9DA4-66E904E67513}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15815204-8F99-4219-ACE1-B6C7094C7677}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15815204-8F99-4219-ACE1-B6C7094C7677}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15815204-8F99-4219-ACE1-B6C7094C7677}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15815204-8F99-4219-ACE1-B6C7094C7677}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

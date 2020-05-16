@@ -6,10 +6,12 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.2" />
+    <PackageReference Include="Okta.AspNetCore" Version="3.1.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\SjsApi.Lib\SjsApi.Lib.csproj" />
+    <ProjectReference Include="..\SjsApi.Security\SjsApi.Security.csproj" />
   </ItemGroup>
 
   <ItemGroup>

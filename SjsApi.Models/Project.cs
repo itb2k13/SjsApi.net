@@ -1,7 +1,6 @@
-﻿using MongoDB.Bson.Serialization.Attributes;
-
-namespace SjsApi.Models
+﻿namespace SjsApi.Models
 {
+    using MongoDB.Bson.Serialization.Attributes;
     using System.Collections.Generic;
 
     /// <summary>
@@ -65,6 +64,11 @@ namespace SjsApi.Models
         /// Gets or sets the Title.
         /// </summary>
         public string Title { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Class.
+        /// </summary>
+        public string Class { get; set; }
     }
 
     /// <summary>
@@ -83,9 +87,29 @@ namespace SjsApi.Models
         public string Title { get; set; }
 
         /// <summary>
+        /// Gets or sets the SubTitle.
+        /// </summary>
+        public string SubTitle { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Icon.
+        /// </summary>
+        public Icon Icon { get; set; }
+
+        /// <summary>
         /// Gets or sets the FeatureSet.
         /// </summary>
         public string[] FeatureSet { get; set; }
+
+        /// <summary>
+        /// Gets or sets the DateStamp.
+        /// </summary>
+        public string DateStamp { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Author.
+        /// </summary>
+        public string Author { get; set; }
     }
 
     /// <summary>
@@ -114,6 +138,11 @@ namespace SjsApi.Models
         public Icon Icon { get; set; }
 
         /// <summary>
+        /// Gets a value indicating whether ShowIcon.
+        /// </summary>
+        public bool ShowIcon => (Icon?.Name ?? "") != string.Empty && (Icon?.Group ?? "") != string.Empty;
+
+        /// <summary>
         /// Gets or sets the References.
         /// </summary>
         public IEnumerable<Reference> References { get; set; }
@@ -127,6 +156,11 @@ namespace SjsApi.Models
         /// Gets or sets the Features.
         /// </summary>
         public IEnumerable<Feature> Features { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Technologies.
+        /// </summary>
+        public IEnumerable<Reference> Technologies { get; set; }
     }
 
     /// <summary>
@@ -135,8 +169,6 @@ namespace SjsApi.Models
     [BsonIgnoreExtraElements]
     public class ContentSection
     {
-        
-
         /// <summary>
         /// Gets or sets the BackgroundImage.
         /// </summary>
@@ -153,7 +185,7 @@ namespace SjsApi.Models
         public string Title { get; set; }
 
         /// <summary>
-        /// Gets or sets the Subtitle.
+        /// Gets or sets the SubTitle.
         /// </summary>
         public string SubTitle { get; set; }
 

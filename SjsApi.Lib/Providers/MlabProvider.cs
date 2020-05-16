@@ -25,7 +25,7 @@
         }
 
         /// <summary>
-        /// Initializes static members of the <see cref="MlabProvider"/> class.
+        /// Initializes a new instance of the <see cref="MlabProvider"/> class.
         /// </summary>
         public MlabProvider()
         {
@@ -41,8 +41,8 @@
         /// <returns>The <see cref="Task{ContentSection}"/>.</returns>
         public async Task<ContentSection> Get(string path)
         {
-            var result = await _collection.Find(PathFilter(path)).FirstAsync();
-            return result;
+            var result = await _collection.Find(PathFilter(path)).FirstOrDefaultAsync();
+            return result ?? new ContentSection() { Path = path };
         }
 
         /// <summary>

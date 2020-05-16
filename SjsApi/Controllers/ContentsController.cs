@@ -3,6 +3,8 @@ using Microsoft.Extensions.Logging;
 using SjsApi.Lib.Providers;
 using SjsApi.Models;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
+using SjsApi.Security;
 
 namespace SjsApi.Controllers
 {
@@ -21,6 +23,7 @@ namespace SjsApi.Controllers
 
         [HttpGet]
         [Route("{section}/{path}")]
+        [AllowAnonymous]
         public async Task<ContentSection> Get(string section, string path)
         {
             return await _contentSectionProvider.GetContentSection($"{section}/{path}");
@@ -28,6 +31,7 @@ namespace SjsApi.Controllers
 
         [HttpPost]
         [Route("{section}/{path}")]
+        [Authorize(Roles = Roles.ContentEditors)]
         public async Task<ContentSection> Set(string section, string path, ContentSection content)
         {
             return await _contentSectionProvider.SetContentSection($"{section}/{path}", content);
@@ -35,6 +39,7 @@ namespace SjsApi.Controllers
 
         [HttpGet]
         [Route("{section}/{path}/{title}")]
+        [AllowAnonymous]
         public async Task<Project> Get(string section, string path, string title)
         {
             return await _contentSectionProvider.GetProjectDetail($"{section}/{path}", title);
