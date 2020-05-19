@@ -138,6 +138,11 @@
         public Icon Icon { get; set; }
 
         /// <summary>
+        /// Gets or sets the Banner.
+        /// </summary>
+        public Media Banner { get; set; }
+
+        /// <summary>
         /// Gets a value indicating whether ShowIcon.
         /// </summary>
         public bool ShowIcon => (Icon?.Name ?? "") != string.Empty && (Icon?.Group ?? "") != string.Empty;

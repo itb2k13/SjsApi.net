@@ -1,4 +1,6 @@
-﻿namespace SjsApi.Lib.Providers
+﻿using Microsoft.Extensions.Configuration;
+
+namespace SjsApi.Lib.Providers
 {
     using MongoDB.Driver;
     using SjsApi.Models;
@@ -14,6 +16,8 @@
         /// </summary>
         private readonly IMongoCollection<ContentSection> _collection;
 
+        private IConfiguration _config;
+
         /// <summary>
         /// The _pathFilter.
         /// </summary>
@@ -27,9 +31,10 @@
         /// <summary>
         /// Initializes a new instance of the <see cref="MlabProvider"/> class.
         /// </summary>
-        public MlabProvider()
+        public MlabProvider(IConfiguration config)
         {
-            var client = new MongoClient(@"mongodb://sjsapi.net:Hd-\`8<AXj&v7taK@ds043917.mlab.com:43917/scoff?retryWrites=false");
+            _config = config;
+            var client = new MongoClient(config.GetConnectionString("mlab.com"));
             var database = client.GetDatabase("scoff");
             _collection = database.GetCollection<ContentSection>("SjsApi.net");
         }
