@@ -180,6 +180,11 @@
         public Media BackgroundImage { get; set; }
 
         /// <summary>
+        /// Gets or sets the Banner.
+        /// </summary>
+        public Media Banner { get; set; }
+
+        /// <summary>
         /// Gets or sets the Path.
         /// </summary>
         public string Path { get; set; }
