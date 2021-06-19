@@ -35,8 +35,8 @@ namespace SjsApi.Lib.Providers
         {
             _config = config;
             var client = new MongoClient(config.GetConnectionString("mlab.com"));
-            var database = client.GetDatabase("scoff");
-            _collection = database.GetCollection<ContentSection>("SjsApi.net");
+            var database = client.GetDatabase("SjsApi");
+            _collection = database.GetCollection<ContentSection>("ContentSections");
         }
 
         /// <summary>
