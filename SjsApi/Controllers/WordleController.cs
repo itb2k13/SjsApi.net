@@ -2,6 +2,7 @@
 {
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Extensions.Logging;
+    using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Net.Http;
@@ -26,6 +27,11 @@
         private static List<string> _wordles = new List<string>();
 
         /// <summary>
+        /// Keeps a timestamp of when the wordle data was last retrieved.
+        /// </summary>
+        private static DateTime _lastRetrieved = DateTime.MinValue;
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="WordleController"/> class.
         /// </summary>
         /// <param name="logger">The logger<see cref="ILogger{WordleController}"/>.</param>
@@ -44,7 +50,7 @@
         {
             using (var httpClient = new HttpClient())
             {
-                if (_wordles.Count > 0)
+                if (_wordles.Count > 0 && (DateTime.Now - _lastRetrieved).TotalMinutes <= (12 * 60))
                     return _wordles;
 
                 var response = await httpClient.GetStringAsync("https://www.rockpapershotgun.com/wordle-past-answers");
@@ -54,7 +60,9 @@
                     .Cast<Match>()
                     .Select(p => p.Value)
                     .Where(x => !string.IsNullOrEmpty(x) && x.Length == 5)
-                    .ToList();              
+                    .ToList();
+
+                _lastRetrieved = DateTime.Now;
 
                 return _wordles;
             }
